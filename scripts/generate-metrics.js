@@ -128,7 +128,7 @@ function contributionGrid(weeks) {
 
 function languageBars(languages) {
   if (!languages.length) return '<text class="muted" x="654" y="335" font-size="14">Language data will appear after the first update.</text>';
-  const colors = ['#67e8f9', '#a78bfa', '#f472b6', '#34d399', '#fbbf24'];
+  const colors = ['#c7ff4c', '#f1eee4', '#9f9c90', '#6f6d64', '#47463f'];
   return languages.map((language, index) => {
     const y = 315 + index * 27;
     const width = Math.max(4, Math.round(language.percent * 4.5));
@@ -142,7 +142,7 @@ function recentActivity(events) {
     const y = 328 + index * 48;
     const repo = event.repo?.name || 'GitHub';
     const date = event.created_at ? new Date(event.created_at).toLocaleDateString('en', { month: 'short', day: 'numeric' }) : '';
-    return `<circle cx="66" cy="${y - 5}" r="4" fill="#8b5cf6"/><text class="label" x="82" y="${y}" font-size="14">${escapeXml(formatEvent(event.type))}</text><text class="muted" x="82" y="${y + 19}" font-size="12">${escapeXml(repo)}</text><text class="muted" x="572" y="${y}" font-size="12" text-anchor="end">${escapeXml(date)}</text>`;
+    return `<rect x="61" y="${y - 10}" width="10" height="10" fill="#c7ff4c"/><text class="label" x="82" y="${y}" font-size="14">${escapeXml(formatEvent(event.type))}</text><text class="muted" x="82" y="${y + 19}" font-size="12">${escapeXml(repo)}</text><text class="muted" x="572" y="${y}" font-size="12" text-anchor="end">${escapeXml(date)}</text>`;
   }).join('');
 }
 
@@ -160,14 +160,14 @@ function buildSvg(data) {
   ];
   const cardMarkup = cards.map(([label, value, note], index) => {
     const x = 48 + index * 282;
-    return `<g><rect class="card" x="${x}" y="115" width="258" height="112" rx="15"/><text class="eyebrow" x="${x + 20}" y="145">${label}</text><text class="value" x="${x + 20}" y="184">${value}</text><text class="muted" x="${x + 20}" y="207" font-size="12">${note}</text></g>`;
+    return `<g><rect class="card" x="${x}" y="144" width="258" height="90" rx="3"/><text class="eyebrow" x="${x + 20}" y="171">${label}</text><text class="value" x="${x + 20}" y="207">${value}</text><text class="muted" x="${x + 92}" y="205" font-size="11">${note}</text></g>`;
   }).join('');
   const updated = new Date().toISOString().slice(0, 10);
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
   <title id="title">GitHub metrics for ${escapeXml(login)}</title><desc id="desc">Repository, star, follower, language, recent activity, and contribution statistics generated from the GitHub API.</desc>
-  <defs><linearGradient id="accent" x1="0" x2="1"><stop offset="0" stop-color="#67e8f9"/><stop offset=".52" stop-color="#a78bfa"/><stop offset="1" stop-color="#f472b6"/><animate attributeName="x1" values="-.3;.2;-.3" dur="10s" repeatCount="indefinite"/><animate attributeName="x2" values=".7;1.2;.7" dur="10s" repeatCount="indefinite"/></linearGradient><linearGradient id="surface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1020"/><stop offset="1" stop-color="#10182b"/></linearGradient><style>text{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace}.bg{fill:url(#surface)}.card{fill:#111a2d;stroke:#27334c}.panel{fill:#0e1628;stroke:#27334c}.title,.value,.label{fill:#f1f5f9}.muted{fill:#91a0b8}.eyebrow{fill:#9ca9be;font-size:11px;letter-spacing:1.4px}.value{font-size:30px;font-weight:700}.track{fill:#202c43}.level-0{fill:#172136}.level-1{fill:#263b67}.level-2{fill:#4f46a5}.level-3{fill:#7c5ce0}.level-4{fill:#a78bfa}@media(prefers-color-scheme:light){.bg{fill:#f8fafc}.card,.panel{fill:#fff;stroke:#d8e0eb}.title,.value,.label{fill:#152033}.muted,.eyebrow{fill:#5c6b80}.track,.level-0{fill:#e7ecf3}.level-1{fill:#ddd6fe}.level-2{fill:#c4b5fd}.level-3{fill:#a78bfa}.level-4{fill:#7c3aed}}</style></defs>
-  <rect class="bg" width="1200" height="650" rx="20"/><rect x="0" y="0" width="1200" height="4" rx="2" fill="url(#accent)"/>
-  <text class="title" x="48" y="58" font-size="23" font-weight="700">GITHUB SIGNAL</text><text class="muted" x="48" y="82" font-size="13">@${escapeXml(login)} / public activity</text><text class="muted" x="1152" y="64" font-size="12" text-anchor="end">UPDATED ${updated}</text>
+  <defs><linearGradient id="accent" x1="0" x2="1"><stop offset="0" stop-color="#c7ff4c" stop-opacity="0"/><stop offset=".42" stop-color="#c7ff4c"/><stop offset=".57" stop-color="#f1eee4"/><stop offset="1" stop-color="#c7ff4c" stop-opacity="0"/><animate attributeName="x1" values="-.25;.15;-.25" dur="9s" repeatCount="indefinite"/><animate attributeName="x2" values=".75;1.15;.75" dur="9s" repeatCount="indefinite"/></linearGradient><style>text{font-family:"Courier New",Courier,monospace}.bg{fill:#151512}.card{fill:#1c1c18;stroke:#4d4b42}.panel{fill:#191916;stroke:#4d4b42}.title{font-family:Georgia,"Times New Roman",serif;letter-spacing:.8px}.title,.value,.label{fill:#f1eee4}.muted{fill:#a8a59a}.eyebrow{fill:#c7ff4c;font-size:11px;letter-spacing:1.7px}.value{font-size:30px;font-weight:700}.track{fill:#34332d}.level-0{fill:#292924}.level-1{fill:#48542b}.level-2{fill:#71853b}.level-3{fill:#9cbd45}.level-4{fill:#c7ff4c}@media(prefers-color-scheme:light){.bg{fill:#eeece4}.card,.panel{fill:#f7f5ed;stroke:#bbb7aa}.title,.value,.label{fill:#1a1a16}.muted{fill:#68665e}.eyebrow{fill:#536d12}.track,.level-0{fill:#dedbd0}.level-1{fill:#c9d79a}.level-2{fill:#adc968}.level-3{fill:#91b83d}.level-4{fill:#719916}}</style></defs>
+  <rect class="bg" width="1200" height="650" rx="4"/><rect x="0" y="0" width="1200" height="3" fill="url(#accent)"/><path d="M25 30V620" stroke="#c7ff4c" stroke-width="2"/>
+  <text class="eyebrow" x="48" y="58">02 / GITHUB SIGNAL</text><text class="title" x="48" y="91" font-size="28" font-weight="700">THE WORK, IN MOTION</text><text class="muted" x="48" y="113" font-size="13">@${escapeXml(login)} / public activity</text><text class="muted" x="1152" y="64" font-size="12" text-anchor="end">UPDATED ${updated}</text>
   ${cardMarkup}
   <rect class="panel" x="48" y="251" width="548" height="187" rx="15"/><text class="eyebrow" x="66" y="282">RECENT ACTIVITY</text>${recentActivity(events)}
   <rect class="panel" x="620" y="251" width="532" height="187" rx="15"/><text class="eyebrow" x="654" y="282">TOP LANGUAGES BY CODE SIZE</text>${languageBars(languages)}
