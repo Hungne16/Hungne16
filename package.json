@@ -1,0 +1,16 @@
+{
+  "name": "github-profile-readme",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A design-led GitHub profile with first-party, automatically generated metrics.",
+  "scripts": {
+    "start": "node dev-server.js",
+    "dev": "node dev-server.js",
+    "deploy": "npx --yes vercel --prod",
+    "metrics": "node scripts/generate-metrics.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
