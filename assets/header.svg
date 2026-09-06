@@ -1,30 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
-  <title id="title">POZAN — digital product engineer</title>
-  <desc id="desc">An editorial portfolio masthead with a subtle animated lime scan line.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-labelledby="title desc">
+  <title id="title">POZAN — software engineer and interface designer</title>
+  <desc id="desc">A bold Swiss-inspired editorial poster with animated signal geometry.</desc>
   <defs>
-    <pattern id="grain" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".65" fill="#f1eee4" opacity=".08"/></pattern>
-    <linearGradient id="scan" x1="0" x2="1"><stop offset="0" stop-color="#c7ff4c" stop-opacity="0"/><stop offset=".45" stop-color="#c7ff4c"/><stop offset=".55" stop-color="#f1eee4"/><stop offset="1" stop-color="#c7ff4c" stop-opacity="0"/></linearGradient>
+    <pattern id="paper" width="11" height="11" patternUnits="userSpaceOnUse"><path d="M0 11L11 0" stroke="#11110f" stroke-opacity=".045"/></pattern>
+    <clipPath id="frame"><rect width="1200" height="460" rx="16"/></clipPath>
     <style>
-      .display{font-family:Georgia,"Times New Roman",serif}.mono{font-family:"Courier New",Courier,monospace}.ink{fill:#f1eee4}.muted{fill:#aaa79b}.acid{fill:#c7ff4c}
-      @media(prefers-color-scheme:light){.surface{fill:#eeece4}.ink{fill:#151512}.muted{fill:#626058}.line{stroke:#b4b1a5}}
+      .display{font-family:Didot,"Bodoni MT",Georgia,serif}.mono{font-family:"Courier New",Courier,monospace}.ink{fill:#11110f}.paper{fill:#f4f0e6}.red{fill:#ff4d36}.blue{fill:#3155d9}.muted{fill:#716d64}
     </style>
   </defs>
-  <rect class="surface" width="1200" height="420" rx="18" fill="#151512"/>
-  <rect width="1200" height="420" rx="18" fill="url(#grain)"/>
-  <path class="line" d="M52 55H1148M52 365H1148" stroke="#5a584f" stroke-width="1"/>
-  <path d="M52 55V365" stroke="#c7ff4c" stroke-width="3"/>
-  <text class="mono acid" x="76" y="85" font-size="12" letter-spacing="2">01 / PORTFOLIO</text>
-  <text class="display ink" x="74" y="212" font-size="132" letter-spacing="-8">POZAN</text>
-  <text class="mono muted" x="80" y="250" font-size="15" letter-spacing="1.5">DIGITAL PRODUCT ENGINEER</text>
-  <text class="mono ink" x="80" y="292" font-size="16">SOFTWARE / INTERFACE / SYSTEMS</text>
-  <g transform="translate(872 106)">
-    <rect width="226" height="188" fill="none" stroke="#5a584f"/>
-    <path d="M0 94H226M113 0V188" stroke="#5a584f" stroke-width="1"/>
-    <circle cx="113" cy="94" r="54" fill="none" stroke="#c7ff4c" stroke-width="2"/>
-    <circle cx="113" cy="94" r="8" fill="#c7ff4c"/>
-    <text class="mono muted" x="18" y="169" font-size="10" letter-spacing="1.5">CRAFT / 2026</text>
+  <g clip-path="url(#frame)">
+    <rect class="paper" width="1200" height="460"/><rect width="1200" height="460" fill="url(#paper)"/>
+    <rect x="0" width="76" height="460" fill="#11110f"/>
+    <text class="mono paper" x="38" y="42" font-size="11" text-anchor="middle" transform="rotate(90 38 42)">INDEX / 01</text>
+    <text class="mono paper" x="38" y="405" font-size="10" text-anchor="middle" transform="rotate(-90 38 405)">VIETNAM / 2026</text>
+    <rect x="76" y="0" width="1124" height="15" class="red"/>
+    <rect x="76" y="15" width="1124" height="4" class="blue"/>
+    <text class="mono ink" x="111" y="67" font-size="12" letter-spacing="2.5">DIGITAL PRODUCT ENGINEER — INTERFACE / CODE / SYSTEMS</text>
+    <text class="display ink" x="102" y="235" font-size="152" letter-spacing="-10">POZAN</text>
+    <path d="M108 268H868" stroke="#11110f" stroke-width="3"/>
+    <text class="mono ink" x="111" y="305" font-size="20" letter-spacing=".4">I BUILD EXPERIENCES WITH A POINT OF VIEW.</text>
+    <text class="mono muted" x="112" y="337" font-size="13">SOFTWARE ENGINEERING × UI/UX × PRODUCT THINKING</text>
+    <g transform="translate(898 77)">
+      <rect width="218" height="274" fill="#11110f"/>
+      <text class="display paper" x="20" y="70" font-size="52">00</text>
+      <text class="mono paper" x="21" y="100" font-size="11" letter-spacing="1.5">THE PRACTICE</text>
+      <path d="M22 134H196M22 192H196" stroke="#f4f0e6" stroke-opacity=".45"/>
+      <circle cx="108" cy="163" r="28" fill="none" stroke="#ff4d36" stroke-width="8"/>
+      <circle cx="108" cy="163" r="7" class="paper"/>
+      <text class="mono paper" x="20" y="238" font-size="11">DESIGN THE SYSTEM.</text>
+      <text class="mono paper" x="20" y="256" font-size="11">ENGINEER THE FEELING.</text>
+    </g>
+    <g transform="translate(108 378)">
+      <rect width="640" height="30" class="blue"/>
+      <rect width="170" height="30" class="red"><animate attributeName="x" values="0;470;0" dur="4.8s" repeatCount="indefinite"/></rect>
+      <text class="mono paper" x="13" y="20" font-size="11" letter-spacing="1.5">SIGNAL IN MOTION</text>
+    </g>
+    <text class="mono ink" x="1116" y="425" text-anchor="end" font-size="10" letter-spacing="1.4">SCROLL FOR THE RECEIPTS ↓</text>
   </g>
-  <rect x="76" y="324" width="510" height="2" fill="url(#scan)"><animate attributeName="x" values="76;510;76" dur="5.5s" repeatCount="indefinite"/></rect>
-  <rect x="590" y="316" width="8" height="17" fill="#c7ff4c"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.48;.5;1" dur="1.15s" repeatCount="indefinite"/></rect>
-  <text class="mono muted" x="1124" y="389" font-size="10" text-anchor="end" letter-spacing="1.2">DESIGNED WITH INTENT</text>
 </svg>

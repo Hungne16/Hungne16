@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="38" viewBox="0 0 1200 38" role="presentation">
-  <defs><linearGradient id="thread" x1="0" x2="1"><stop offset="0" stop-color="#c7ff4c" stop-opacity="0"/><stop offset=".45" stop-color="#c7ff4c"/><stop offset=".55" stop-color="#f1eee4"/><stop offset="1" stop-color="#c7ff4c" stop-opacity="0"/></linearGradient></defs>
-  <path d="M58 19H1142" stroke="url(#thread)" stroke-width="1.5"/><rect x="594" y="13" width="12" height="12" fill="#c7ff4c"><animate attributeName="opacity" values=".45;1;.45" dur="2.8s" repeatCount="indefinite"/></rect>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="48" viewBox="0 0 1200 48" role="presentation">
+  <rect width="1200" height="48" fill="#11110f"/>
+  <path d="M48 24H1152" stroke="#f4f0e6" stroke-opacity=".6"/>
+  <rect x="573" y="12" width="24" height="24" fill="#ff4d36"><animateTransform attributeName="transform" type="rotate" values="0 585 24;90 585 24;0 585 24" dur="4s" repeatCount="indefinite"/></rect>
+  <rect x="603" y="12" width="24" height="24" fill="#3155d9"/>
 </svg>
