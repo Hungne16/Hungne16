@@ -128,7 +128,7 @@ function contributionGrid(weeks) {
 
 function languageBars(languages) {
   if (!languages.length) return '<text class="muted" x="654" y="335" font-size="14">Language data will appear after the first update.</text>';
-  const colors = ['#3155d9', '#ff4d36', '#11110f', '#7f7a70', '#c5bfb3'];
+  const colors = ['#52f7d7', '#ffe66d', '#ff8249', '#77a4ff', '#9f8cff'];
   return languages.map((language, index) => {
     const y = 315 + index * 27;
     const width = Math.max(4, Math.round(language.percent * 4.5));
@@ -142,7 +142,7 @@ function recentActivity(events) {
     const y = 328 + index * 48;
     const repo = event.repo?.name || 'GitHub';
     const date = event.created_at ? new Date(event.created_at).toLocaleDateString('en', { month: 'short', day: 'numeric' }) : '';
-    return `<rect x="61" y="${y - 10}" width="10" height="10" fill="#ff4d36"/><text class="label" x="82" y="${y}" font-size="14">${escapeXml(formatEvent(event.type))}</text><text class="muted" x="82" y="${y + 19}" font-size="12">${escapeXml(repo)}</text><text class="muted" x="572" y="${y}" font-size="12" text-anchor="end">${escapeXml(date)}</text>`;
+    return `<path d="M61 ${y - 5}l5-5 5 5-5 5z" fill="#52f7d7"/><text class="label" x="82" y="${y}" font-size="14">${escapeXml(formatEvent(event.type))}</text><text class="muted" x="82" y="${y + 19}" font-size="12">${escapeXml(repo)}</text><text class="muted" x="572" y="${y}" font-size="12" text-anchor="end">${escapeXml(date)}</text>`;
   }).join('');
 }
 
@@ -165,9 +165,9 @@ function buildSvg(data) {
   const updated = new Date().toISOString().slice(0, 10);
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
   <title id="title">GitHub metrics for ${escapeXml(login)}</title><desc id="desc">Repository, star, follower, language, recent activity, and contribution statistics generated from the GitHub API.</desc>
-  <defs><linearGradient id="accent" x1="0" x2="1"><stop offset="0" stop-color="#ff4d36"/><stop offset=".5" stop-color="#ff4d36"/><stop offset=".5" stop-color="#3155d9"/><stop offset="1" stop-color="#3155d9"/><animate attributeName="x1" values="-.15;.15;-.15" dur="7s" repeatCount="indefinite"/><animate attributeName="x2" values=".85;1.15;.85" dur="7s" repeatCount="indefinite"/></linearGradient><style>text{font-family:"Courier New",Courier,monospace}.bg{fill:#f4f0e6}.card{fill:#11110f;stroke:#11110f}.panel{fill:#f4f0e6;stroke:#11110f}.title{font-family:Didot,"Bodoni MT",Georgia,serif;letter-spacing:-.5px;fill:#11110f}.value{fill:#f4f0e6}.label{fill:#11110f}.muted{fill:#716d64}.eyebrow{fill:#3155d9;font-size:11px;letter-spacing:1.7px}.value{font-size:30px;font-weight:700}.track{fill:#d8d2c6}.level-0{fill:#ded8cc}.level-1{fill:#9eafe8}.level-2{fill:#3155d9}.level-3{fill:#e77767}.level-4{fill:#ff4d36}@media(prefers-color-scheme:dark){.bg{fill:#f4f0e6}}</style></defs>
-  <rect class="bg" width="1200" height="650" rx="4"/><rect x="0" y="0" width="1200" height="15" fill="#11110f"/><rect x="0" y="15" width="1200" height="5" fill="url(#accent)"/><path d="M25 30V620" stroke="#ff4d36" stroke-width="3"/>
-  <text class="eyebrow" x="48" y="58">02 / GITHUB SIGNAL</text><text class="title" x="48" y="91" font-size="31" font-weight="700">EVIDENCE OF PRACTICE.</text><text class="muted" x="48" y="113" font-size="13">@${escapeXml(login)} / public activity</text><text class="muted" x="1152" y="64" font-size="12" text-anchor="end">UPDATED ${updated}</text>
+  <defs><linearGradient id="accent" x1="0" x2="1"><stop offset="0" stop-color="#52f7d7"/><stop offset=".52" stop-color="#ffe66d"/><stop offset="1" stop-color="#ff8249"/><animate attributeName="x1" values="-.2;.1;-.2" dur="8s" repeatCount="indefinite"/><animate attributeName="x2" values=".8;1.1;.8" dur="8s" repeatCount="indefinite"/></linearGradient><linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#10232a"/><stop offset="1" stop-color="#091117"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="3" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter><style>text{font-family:"Courier New",Courier,monospace}.bg{fill:#05080e}.card{fill:url(#card);stroke:#31515b}.panel{fill:#081219;stroke:#29434c}.title{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.5px;fill:#f1f8f5}.value,.label{fill:#f1f8f5}.muted{fill:#91a5aa}.eyebrow{fill:#52f7d7;font-size:11px;letter-spacing:1.7px}.value{font-size:30px;font-weight:700}.track{fill:#1b3037}.level-0{fill:#122129}.level-1{fill:#174641}.level-2{fill:#1e7770}.level-3{fill:#31b7a5}.level-4{fill:#52f7d7}</style></defs>
+  <rect class="bg" width="1200" height="650" rx="20"/><rect x="0" y="0" width="1200" height="3" fill="url(#accent)" filter="url(#glow)"/><path d="M25 30V620" stroke="#52f7d7" stroke-width="2" opacity=".65"/>
+  <text class="eyebrow" x="48" y="58">02 / LIVE TELEMETRY</text><text class="title" x="48" y="91" font-size="31" font-weight="700">Proof of practice.</text><text class="muted" x="48" y="113" font-size="13">@${escapeXml(login)} / public signal</text><text class="muted" x="1152" y="64" font-size="12" text-anchor="end">SYNCED ${updated}</text>
   ${cardMarkup}
   <rect class="panel" x="48" y="251" width="548" height="187" rx="15"/><text class="eyebrow" x="66" y="282">RECENT ACTIVITY</text>${recentActivity(events)}
   <rect class="panel" x="620" y="251" width="532" height="187" rx="15"/><text class="eyebrow" x="654" y="282">TOP LANGUAGES BY CODE SIZE</text>${languageBars(languages)}

@@ -8,16 +8,19 @@
   <sub>BASED IN VIETNAM · OPEN TO MEANINGFUL COLLABORATIONS</sub>
 </div>
 
-## A designer's instinct. An engineer's discipline.
+## Engineering the interface between people and systems.
 
 I'm **POZAN**, a Software Engineering student building digital products that are useful, tactile, and quietly memorable. I care about the whole journey: from a clear visual system in Figma to a resilient, responsive interface in the browser.
 
 My focus sits at the intersection of **frontend engineering**, **UI/UX**, and **product thinking**. I work with Figma and Framer to find the right experience before turning it into clean, maintainable code.
 
-## Working set
+## Capability system
 
-`HTML` `CSS` `JavaScript` `TypeScript` `React` `Next.js` `Node.js`  
-`Firebase` `SQL` `Git` `GitHub` `Figma` `Framer`
+<div align="center">
+  <img src="./assets/skills.svg" width="100%" alt="POZAN's frontend, interface design, web foundation, and systems skills">
+</div>
+
+<sub>My strongest lane is frontend product engineering: translating a visual idea into a fast, accessible, maintainable experience.</sub>
 
 ## Selected work
 
@@ -29,7 +32,7 @@ My focus sits at the intersection of **frontend engineering**, **UI/UX**, and **
 | `02` | **[Project Two](https://github.com/Hungne16/PROJECT_TWO)** | A responsive interface where visual detail supports the task at hand. | `React` `Firebase` |
 | `03` | **[Project Three](https://github.com/Hungne16/PROJECT_THREE)** | An experiment in systems, interaction, or thoughtful web craft. | `Node.js` `SQL` |
 
-## Activity, not noise
+## Live telemetry
 
 <div align="center">
   <img src="./assets/metrics.svg" width="100%" alt="POZAN's GitHub activity metrics">
@@ -46,5 +49,5 @@ My focus sits at the intersection of **frontend engineering**, **UI/UX**, and **
 
 <div align="center">
   <img src="./assets/divider.svg" width="100%" alt="">
-  <sub>MAKE IT CLEAR. MAKE IT COUNT.</sub>
+  <sub>DESIGN THE SYSTEM · ENGINEER THE FEELING</sub>
 </div>
