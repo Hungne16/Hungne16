@@ -1,9 +1,25 @@
 import { readFile, writeFile } from 'node:fs/promises';
 const asset = name => new URL('../assets/' + name, import.meta.url);
 const png = (await readFile(asset('artist-banner.png'))).toString('base64');
+// Seeded glyphs keep builds deterministic. Animate columns, not individual letters.
+const glyphs = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ012345789';
+const rain = Array.from({ length: 39 }, (_, i) => {
+ const count = 13 + i % 7;
+ const duration = 6 + (i * 7 % 11) * .65;
+ const letters = Array.from({ length: count }, (_, j) =>
+  '<text x="0" y="' + j * 17 + '" class="' + (j === count-1 ? 'rain-head' : 'rain-char') +
+  '" opacity="' + (.07 + .75 * (j / count) ** 2).toFixed(2) + '">' +
+  glyphs[(i * 19 + j * 7) % glyphs.length] + '</text>').join('');
+ return '<g transform="translate(' + (18 + i*31) + ' 0)"><g class="rain-column" style="animation-duration:' +
+  duration + 's;animation-delay:' + (-(i*1.71 % duration)).toFixed(2) + 's">' + letters + '</g></g>';
+}).join('');
 const hero = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="t d">
 <title id="t">POZAN — where human imagination meets code</title><desc id="d">Sculptural hands float toward a pulsing star, with orbital light and a moving scan line. Monochrome digital artwork.</desc>
 <defs>
+<linearGradient id="rain-depth" x1="0" y1="0" x2="0" y2="1"><stop stop-color="white" stop-opacity=".45"/><stop offset=".23" stop-color="white" stop-opacity=".7"/><stop offset=".43" stop-color="white" stop-opacity=".08"/><stop offset=".62" stop-color="white" stop-opacity=".04"/><stop offset=".73" stop-color="white" stop-opacity=".4"/><stop offset=".8" stop-color="white" stop-opacity=".1"/><stop offset="1" stop-color="black"/></linearGradient>
+<mask id="rain-mask"><rect width="1200" height="650" fill="url(#rain-depth)"/></mask>
+<clipPath id="rain-frame"><rect width="1200" height="650" rx="18"/></clipPath>
+<filter id="rain-glow" x="-100%" y="-50%" width="300%" height="200%"><feGaussianBlur stdDeviation="1.6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 <image id="art" width="1200" height="600" href="data:image/png;base64,${png}"/>
 <clipPath id="left"><rect width="599" height="600"/></clipPath><clipPath id="right"><rect x="599" width="601" height="600"/></clipPath>
 <radialGradient id="light"><stop stop-color="#e7eeff" stop-opacity=".28"/><stop offset="1" stop-color="#e7eeff" stop-opacity="0"/></radialGradient>
@@ -11,10 +27,12 @@ const hero = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" 
 <linearGradient id="scan" x2="0" y2="1"><stop stop-color="#d6e6ff" stop-opacity="0"/><stop offset=".5" stop-color="#d6e6ff" stop-opacity=".07"/><stop offset="1" stop-color="#d6e6ff" stop-opacity="0"/></linearGradient>
 <style>text{fill:#dce4ef;font-family:monospace}.left{animation:left 9s ease-in-out infinite}.right{animation:right 9s ease-in-out infinite}.orbit{transform-origin:612px 320px;animation:orbit 30s linear infinite}.breathe{animation:breathe 4.5s ease-in-out infinite}.scan{animation:scan 10s linear infinite}.signal{stroke-dasharray:3 17;animation:signal 6s linear infinite}
 @keyframes left{50%{transform:translate(8px,-5px)}}@keyframes right{50%{transform:translate(-8px,5px)}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes breathe{50%{opacity:.3}}@keyframes scan{from{transform:translateY(-400px)}to{transform:translateY(350px)}}@keyframes signal{to{stroke-dashoffset:-120}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important}.scan{display:none}}
+.rain-char,.rain-head{font-family:"Yu Gothic","MS Gothic",monospace;font-size:14px;fill:#ff273a}.rain-head{fill:#ffe0e4;filter:url(#rain-glow)}.rain-column{animation:rain-fall 9s linear infinite}@keyframes rain-fall{from{transform:translateY(-350px)}to{transform:translateY(650px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.scan{display:none}.rain-column{transform:translateY(60px);opacity:.18}}
 </style></defs>
 <rect width="1200" height="650" rx="18" fill="#0d1117"/>
 <g class="left"><use href="#art" clip-path="url(#left)"/></g><g class="right"><use href="#art" clip-path="url(#right)"/></g>
+<g clip-path="url(#rain-frame)" mask="url(#rain-mask)" aria-hidden="true" style="mix-blend-mode:screen">${rain}</g>
 <rect width="1200" height="600" fill="url(#fade)"/>
 <g opacity=".65"><ellipse cx="612" cy="320" rx="145" ry="42" fill="none" stroke="#8496b2" stroke-width=".7" transform="rotate(-27 612 320)"/><ellipse cx="612" cy="320" rx="105" ry="163" fill="none" stroke="#8496b2" stroke-width=".6" stroke-dasharray="1 9" transform="rotate(35 612 320)"/></g>
 <g class="orbit"><circle cx="612" cy="320" r="138" fill="none" stroke="#b9c5d7" stroke-opacity=".2" stroke-dasharray="60 808"/><circle cx="750" cy="320" r="3" fill="#ebf2ff"/></g>
