@@ -40,16 +40,17 @@ My focus sits at the intersection of **frontend engineering**, **UI/UX**, and **
 ## Skills & capabilities
 
 <p align="center">
-  <img src="./assets/skills.svg?v=1" width="100%" alt="Frontend: React, Next.js, TypeScript, JavaScript, HTML, CSS. UI/UX: Figma, Framer. Backend and data: Node.js, Firebase, SQL. Version control: Git, GitHub.">
+  <img src="./assets/skills.svg?v=2" width="100%" alt="POZAN's skills across Frontend, UI/UX and Design, Backend and Data, Systems and DevOps, and Version Control. Full technology list below.">
 </p>
 
 <details>
 <summary>Skills at a glance</summary>
 
-- **Frontend:** React, Next.js, TypeScript, JavaScript, HTML, CSS.
-- **UI/UX & design:** Figma, Framer.
-- **Backend & data:** Node.js, Firebase, SQL.
-- **Version control:** Git, GitHub.
+- **Frontend:** React, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS, Bootstrap, PHP.
+- **UI/UX & design:** Figma, Framer, Canva, Photoshop, Blender, Affinity.
+- **Backend & data:** Node.js, Firebase, SQL, Python, MongoDB, Supabase.
+- **Systems & DevOps:** Laravel, Go (Golang), AWS, Docker.
+- **Version control:** Git, GitHub, GitLab.
 
 </details>
 
