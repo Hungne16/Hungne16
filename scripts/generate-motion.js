@@ -82,17 +82,56 @@ await writeFile(asset('design-motion.svg'), stage);
 
 const names = ['html', 'css', 'js', 'ts', 'react', 'nextjs', 'figma', 'framer', 'nodejs', 'firebase', 'mysql', 'git', 'github'];
 const labels = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Figma', 'Framer', 'Node.js', 'Firebase', 'SQL', 'Git', 'GitHub'];
-const tiles = await Promise.all(names.map(async (name, i) => {
-  const row = i < 6 ? 0 : 1;
-  const col = row ? i - 6 : i;
-  const x = (row ? 66 : 136) + col * 140;
-  const y = row ? 174 : 37;
-  return '<g transform="translate(' + x + ' ' + y + ')"><g class="tile" style="animation-delay:-' + (i * .43) + 's">' +
-    '<rect x="3" y="7" width="119" height="103" rx="19" fill="#05080d"/><rect width="119" height="103" rx="19" fill="url(#tile)" stroke="#394454"/>' +
-    await icon(name, 34, 13, 51) + '<text x="59.5" y="86" text-anchor="middle">' + labels[i] + '</text></g></g>';
-}));
-await writeFile(asset('tools-motion.svg'), `<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="320" viewBox="0 0 1100 320" role="img" aria-label="Technology toolkit: ${labels.join(', ')}">
-<defs><linearGradient id="tile" x2=".3" y2="1"><stop stop-color="#252e3b"/><stop offset="1" stop-color="#121923"/></linearGradient>
-<style>text{font:13px Verdana,sans-serif;fill:#c7d1df}.tile{animation:lift 6s ease-in-out infinite;transform-origin:60px 50px}@keyframes lift{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-9px) rotate(1deg)}}@media(prefers-reduced-motion:reduce){.tile{animation:none}}</style></defs>
-<rect width="1100" height="320" rx="16" fill="#0d1117"/>${tiles.join('')}</svg>`);
-console.log('Generated design-motion.svg and tools-motion.svg with embedded vector logos.');
+// Three concentric ellipses with independent periods. Translation keeps logos upright.
+const rings = [
+  {r:164, count:4, period:32, direction:1, offset:.35},
+  {r:294, count:4, period:46, direction:-1, offset:.9},
+  {r:428, count:5, period:62, direction:1, offset:.15}
+];
+let motionCSS = '';
+let index = 0;
+const nodes = [];
+for (const ring of rings) {
+  for (let n = 0; n < ring.count; n++, index++) {
+    const angle = ring.offset + n * Math.PI * 2 / ring.count;
+    const point = a => [550 + ring.r*Math.cos(a), 439 + ring.r*.76*Math.sin(a)];
+    const [x,y] = point(angle);
+    const frames = Array.from({length:65},(_,step)=>{
+      const [px,py] = point(angle + ring.direction * step/64*Math.PI*2);
+      return (step/64*100).toFixed(4)+'%{transform:translate('+px.toFixed(2)+'px,'+py.toFixed(2)+'px)}';
+    }).join('');
+    motionCSS += '@keyframes orbit'+index+'{'+frames+'}';
+    nodes.push('<g class="satellite" style="animation:orbit'+index+' '+ring.period+'s linear infinite" transform="translate('+x.toFixed(2)+' '+y.toFixed(2)+')">'+
+      '<title>'+labels[index]+'</title><rect x="-42" y="-37" width="84" height="89" rx="19" fill="#060910" opacity=".8"/>'+
+      '<rect x="-42" y="-42" width="84" height="89" rx="19" fill="url(#tile)" stroke="#52617a"/>'+
+      await icon(names[index],-25,-31,50)+
+      '<text x="0" y="35" text-anchor="middle">'+labels[index]+'</text></g>');
+  }
+}
+const tracks = rings.map((r,i)=>'<ellipse cx="550" cy="439" rx="'+r.r+'" ry="'+r.r*.76+'" fill="none" stroke="#566580" stroke-opacity=".45"/>'+
+  '<ellipse class="trail" style="animation-duration:'+(18+i*9)+'s;animation-direction:'+(i===1?'reverse':'normal')+'" cx="550" cy="439" rx="'+r.r+'" ry="'+r.r*.76+'" fill="none" stroke="'+['#a9bdf4','#b9a8d9','#9abbbd'][i]+'" stroke-width="2" stroke-dasharray="35 85 2 480"/>').join('');
+await writeFile(asset('tools-motion.svg'), `<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="850" viewBox="0 0 1100 850" role="img" aria-labelledby="title desc">
+<title id="title">POZAN — my creative orbit</title><desc id="desc">POZAN at the center of three moving orbits, surrounded by HTML, CSS, JavaScript, TypeScript, React, Next.js, Figma, Framer, Node.js, Firebase, SQL, Git and GitHub. Each logo remains upright. Reduced motion displays a static constellation.</desc>
+<defs>
+<linearGradient id="tile" x2=".3" y2="1"><stop stop-color="#2a3547"/><stop offset="1" stop-color="#121923"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#708cb8" stop-opacity=".23"/><stop offset="1" stop-color="#0d1117" stop-opacity="0"/></radialGradient>
+<linearGradient id="silver" x2="1" y2="1"><stop stop-color="#576a89"/><stop offset=".4" stop-color="#e1e8f4"/><stop offset=".7" stop-color="#647898"/><stop offset="1" stop-color="#a7b8d3"/></linearGradient>
+<pattern id="stars" width="43" height="39" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".7" fill="#9baecc" opacity=".18"/></pattern>
+<style>text{font:11px Verdana,sans-serif;fill:#d4dfee}.meta{font:11px monospace;letter-spacing:2px;fill:#9cacbf}.trail{animation:trace 18s linear infinite}.pulse{animation:pulse 5s ease-in-out infinite}@keyframes trace{to{stroke-dashoffset:-1204}}@keyframes pulse{50%{opacity:.4}}
+${motionCSS}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></defs>
+<rect width="1100" height="850" rx="20" fill="#0d1117"/><rect width="1100" height="850" rx="20" fill="url(#stars)"/>
+<ellipse cx="550" cy="439" rx="370" ry="290" fill="url(#halo)"/>
+<text x="43" y="45" class="meta">POZAN / CREATIVE GRAVITY</text><text x="43" y="93" style="font:38px Georgia,serif;fill:#e5edf8">Everything in my orbit.</text>
+<text x="1055" y="45" text-anchor="end" class="meta">13 TOOLS · ONE CREATOR</text>
+${tracks}
+<circle cx="550" cy="439" r="88" fill="#060c15" stroke="url(#silver)" stroke-width="2"/>
+<circle class="pulse" cx="550" cy="439" r="98" fill="none" stroke="#6b82a8" stroke-opacity=".6" stroke-dasharray="1 6"/>
+<text x="550" y="414" text-anchor="middle" class="meta" style="font-size:9px">THE CREATOR</text>
+<text x="550" y="450" text-anchor="middle" style="font:32px Georgia,serif;letter-spacing:3px;fill:#f1f4fc">POZAN</text>
+<text x="550" y="475" text-anchor="middle" class="meta" style="font-size:9px;letter-spacing:1px">DESIGN × CODE</text>
+${nodes.join('')}
+<path d="M43 803H1057" stroke="#303c50"/><text x="43" y="828" class="meta">FRONTEND / DESIGN / SYSTEMS</text><text x="1057" y="828" text-anchor="end" class="meta">CONNECTED BY CURIOSITY</text>
+</svg>`);
+console.log('Generated design-motion.svg and orbital tools-motion.svg.');
