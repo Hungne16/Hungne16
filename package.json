@@ -8,7 +8,8 @@
     "start": "node dev-server.js",
     "dev": "node dev-server.js",
     "deploy": "npx --yes vercel --prod",
-    "metrics": "node scripts/generate-metrics.js"
+    "metrics": "node scripts/generate-metrics.js",
+    "motion": "node scripts/generate-motion.js"
   },
   "engines": {
     "node": ">=20"

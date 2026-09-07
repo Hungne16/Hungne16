@@ -10,6 +10,10 @@
   <samp>A little art. A lot of curiosity. Built with code.</samp>
 </div>
 
+<div align="center">
+  <img src="./assets/design-motion.svg" width="100%" alt="POZAN — animated design study: floating interface layers, prototype cursor, and Figma, Framer, React workflow">
+</div>
+
 ## About me
 
 I'm **POZAN**, a Software Engineering student building digital products that are useful, tactile, and quietly memorable. I care about the whole journey: from a clear visual system in Figma to a resilient, responsive interface in the browser.
@@ -19,21 +23,7 @@ My focus sits at the intersection of **frontend engineering**, **UI/UX**, and **
 ## Tools of my craft
 
 <div align="center">
-  <p><strong>Frontend &amp; web</strong></p>
-  <img src="./assets/icons/html.svg" width="48" height="48" alt="HTML" title="HTML"> &nbsp;
-  <img src="./assets/icons/css.svg" width="48" height="48" alt="CSS" title="CSS"> &nbsp;
-  <img src="./assets/icons/js.svg" width="48" height="48" alt="JavaScript" title="JavaScript"> &nbsp;
-  <img src="./assets/icons/ts.svg" width="48" height="48" alt="TypeScript" title="TypeScript"> &nbsp;
-  <img src="./assets/icons/react.svg" width="48" height="48" alt="React" title="React"> &nbsp;
-  <img src="./assets/icons/nextjs.svg" width="48" height="48" alt="Next.js" title="Next.js">
-  <p><strong>Design, data &amp; workflow</strong></p>
-  <img src="./assets/icons/figma.svg" width="48" height="48" alt="Figma" title="Figma"> &nbsp;
-  <img src="./assets/icons/framer.svg" width="48" height="48" alt="Framer" title="Framer"> &nbsp;
-  <img src="./assets/icons/nodejs.svg" width="48" height="48" alt="Node.js" title="Node.js"> &nbsp;
-  <img src="./assets/icons/firebase.svg" width="48" height="48" alt="Firebase" title="Firebase"> &nbsp;
-  <img src="./assets/icons/mysql.svg" width="48" height="48" alt="SQL / MySQL" title="SQL / MySQL"> &nbsp;
-  <img src="./assets/icons/git.svg" width="48" height="48" alt="Git" title="Git"> &nbsp;
-  <img src="./assets/icons/github.svg" width="48" height="48" alt="GitHub" title="GitHub">
+  <img src="./assets/tools-motion.svg" width="100%" alt="HTML, CSS, JavaScript, TypeScript, React, Next.js, Figma, Framer, Node.js, Firebase, SQL, Git and GitHub — animated logo tiles">
 </div>
 
 <sub>My strongest lane is frontend product engineering: translating a visual idea into a fast, accessible, maintainable experience.</sub>

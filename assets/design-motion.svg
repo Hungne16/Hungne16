@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="650" viewBox="0 0 1100 650" role="img" aria-labelledby="title desc">
+<title id="title">POZAN — from imagination to interaction</title>
+<desc id="desc">An animated design study: floating interface layers, a rotating sculptural ribbon, a prototype cursor and Figma, Framer and React workflow. Animation is decorative, not an interactive editor.</desc>
+<defs>
+ <radialGradient id="halo"><stop stop-color="#778496" stop-opacity=".2"/><stop offset="1" stop-color="#0d1117" stop-opacity="0"/></radialGradient>
+ <linearGradient id="glass" x2=".8" y2="1"><stop stop-color="#2c3440"/><stop offset=".5" stop-color="#171d26"/><stop offset="1" stop-color="#10151c"/></linearGradient>
+ <linearGradient id="chrome" x2="1" y2="1"><stop stop-color="#202936"/><stop offset=".25" stop-color="#e2e8ed"/><stop offset=".48" stop-color="#535e6b"/><stop offset=".65" stop-color="#f5f5f0"/><stop offset="1" stop-color="#424d5b"/></linearGradient>
+ <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".65" fill="#c2ccda" opacity=".15"/></pattern>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="20" stdDeviation="14" flood-opacity=".65"/></filter>
+ <style>
+ text{font-family:Verdana,sans-serif;fill:#e6edf3}.mono{font-family:monospace;fill:#929eae;font-size:12px;letter-spacing:2px}.display{font-family:Georgia,serif;font-size:50px;letter-spacing:-2px}.small{font-size:13px;fill:#a5b0bf}
+ .float{animation:float 8s ease-in-out infinite}.back{animation:back 8s ease-in-out infinite}.front{animation:front 8s ease-in-out infinite}
+ .spin{transform-origin:835px 180px;animation:spin 22s linear infinite}.cursor{animation:cursor 8s ease-in-out infinite}.selection{animation:select 8s ease-in-out infinite}
+ .draw{stroke-dasharray:600;animation:draw 8s ease-in-out infinite}.pulse{animation:pulse 3s ease-in-out infinite}.flow{stroke-dasharray:5 12;animation:flow 4s linear infinite}
+ @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+ @keyframes back{0%,100%{transform:translate(0,0)}50%{transform:translate(-14px,-20px)}}
+ @keyframes front{0%,100%{transform:translate(0,0)}50%{transform:translate(16px,16px)}}
+ @keyframes spin{to{transform:rotate(360deg)}}
+ @keyframes cursor{0%,100%{transform:translate(0,0)}25%,45%{transform:translate(-116px,-35px)}65%,85%{transform:translate(-52px,32px)}}
+ @keyframes select{0%,18%,90%,100%{opacity:.2}28%,82%{opacity:1}}
+ @keyframes draw{0%,10%{stroke-dashoffset:600}55%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:600}}
+ @keyframes pulse{50%{opacity:.35}}@keyframes flow{to{stroke-dashoffset:-68}}
+ @media(prefers-reduced-motion:reduce){*{animation:none!important}.draw{stroke-dashoffset:0}}
+ </style>
+</defs>
+<rect width="1100" height="650" rx="18" fill="#0d1117"/>
+<ellipse cx="640" cy="300" rx="490" ry="300" fill="url(#halo)"/>
+<text x="44" y="44" class="mono">POZAN / INTERACTION STUDY — 001</text>
+<text x="44" y="104" class="display">Imagination,</text><text x="44" y="160" class="display" font-style="italic">in motion.</text>
+<text x="46" y="194" class="small">Visual systems. Thoughtful interactions.</text>
+<text x="46" y="217" class="small">Interfaces that feel considered.</text>
+<g opacity=".6" stroke="#46505e" fill="none"><ellipse cx="835" cy="180" rx="167" ry="102"/><ellipse cx="835" cy="180" rx="196" ry="119" stroke-dasharray="2 9"/></g>
+<g class="spin" fill="none" stroke="url(#chrome)" stroke-width="18">
+ <ellipse cx="835" cy="180" rx="101" ry="57" transform="rotate(-40 835 180)"/>
+ <ellipse cx="835" cy="180" rx="101" ry="57" transform="rotate(40 835 180)"/>
+ <ellipse cx="835" cy="180" rx="101" ry="57" transform="rotate(90 835 180)"/>
+</g>
+<circle cx="835" cy="180" r="7" fill="#e9ecf0"/>
+<text x="1014" y="307" text-anchor="end" class="mono">FORM × FUNCTION</text>
+<g transform="translate(310 251) matrix(.91 .12 -.27 .83 0 0)">
+ <g class="back"><rect x="40" y="-22" width="510" height="240" rx="14" fill="#121922" stroke="#536170"/><rect x="40" y="-22" width="510" height="240" rx="14" fill="url(#dots)"/><text x="65" y="11" class="mono">01 / WIREFRAME</text><path d="M65 42H264V178H65ZM290 42H514M290 74H465M290 110H500M290 143H450" stroke="#536170" fill="none"/></g>
+ <g class="float" filter="url(#shadow)">
+  <rect width="510" height="248" rx="14" fill="url(#glass)" stroke="#82909e"/>
+  <path d="M0 35H510" stroke="#46505d"/><circle cx="18" cy="18" r="3" fill="#84909e"/><circle cx="31" cy="18" r="3" fill="#84909e"/><text x="54" y="23" class="mono">UNTITLED / DESIGN CANVAS</text>
+  <rect x="24" y="55" width="182" height="170" rx="8" fill="#0e141b"/>
+  <ellipse cx="115" cy="137" rx="59" ry="58" fill="none" stroke="url(#chrome)" stroke-width="24"/><path d="M82 171L148 100" stroke="#e6edf3" stroke-width="3"/>
+  <text x="233" y="87" class="mono">PORTFOLIO / 2026</text><text x="232" y="124" font-family="Georgia,serif" font-size="29">Less, but better.</text>
+  <path d="M234 146H470M234 158H441" stroke="#687585" stroke-width="3"/>
+  <rect x="233" y="181" width="142" height="31" rx="15" fill="#e7e9ed"/><text x="254" y="201" style="fill:#151a23;font-size:11px">Explore the work ↗</text>
+  <g class="selection" stroke="#a6b9f9" fill="none"><rect x="223" y="102" width="263" height="37"/><path d="M220 99h6v6h-6zM483 99h6v6h-6zM220 136h6v6h-6zM483 136h6v6h-6z" fill="#d8e1ff"/></g>
+ </g>
+ <g class="front" filter="url(#shadow)"><rect x="333" y="202" width="244" height="66" rx="9" fill="#202a36" stroke="#8c99ab"/><text x="352" y="225" class="mono">PROTOTYPE / EASE OUT</text><path d="M353 249C390 249 400 231 420 231H556" fill="none" stroke="#b4c4f7" stroke-width="2" class="draw"/></g>
+ <g class="cursor" transform="translate(0 0)"><path d="M441 165l7 30 7-11 13-4z" fill="#e3eaff" stroke="#0d1117" stroke-width="2"/><rect x="460" y="192" width="66" height="22" rx="5" fill="#a6b9f9"/><text x="472" y="207" style="fill:#111827;font-size:11px">POZAN</text></g>
+</g>
+<path d="M221 408C260 408 244 372 304 372M758 480C861 480 841 393 914 393" fill="none" stroke="#7c8798" class="flow"/>
+<g transform="translate(45 328)" class="unused"><g class="float"><rect width="204" height="75" rx="14" fill="#181f29" stroke="#3e4858"/><svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 256 256" x="17" y="14" width="42" height="42"><rect width="256" height="256" fill="#242938" rx="60"/><g clip-path="url(#figma-clip0_4_180)"><path fill="#0ACF83" d="M94.3467 228C112.747 228 127.68 213.067 127.68 194.667V161.333H94.3467C75.9467 161.333 61.0133 176.267 61.0133 194.667C61.0133 213.067 75.9467 228 94.3467 228Z"/><path fill="#A259FF" d="M61.0133 128C61.0133 109.6 75.9467 94.6667 94.3467 94.6667H127.68V161.333H94.3467C75.9467 161.333 61.0133 146.4 61.0133 128Z"/><path fill="#F24E1E" d="M61.0133 61.3333C61.0133 42.9333 75.9467 28 94.3467 28H127.68V94.6667H94.3467C75.9467 94.6667 61.0133 79.7333 61.0133 61.3333Z"/><path fill="#FF7262" d="M127.68 28H161.013C179.413 28 194.347 42.9333 194.347 61.3333C194.347 79.7333 179.413 94.6667 161.013 94.6667H127.68V28Z"/><path fill="#1ABCFE" d="M194.347 128C194.347 146.4 179.413 161.333 161.013 161.333C142.613 161.333 127.68 146.4 127.68 128C127.68 109.6 142.613 94.6667 161.013 94.6667C179.413 94.6667 194.347 109.6 194.347 128Z"/></g><defs><clipPath id="figma-clip0_4_180"><rect width="133.36" height="200" fill="#fff" transform="translate(61 28)"/></clipPath></defs></svg><text x="72" y="34" font-size="17">Figma</text><text x="72" y="54" class="small">Design systems</text></g></g>
+<g transform="translate(865 353)"><g class="back"><rect width="199" height="75" rx="14" fill="#181f29" stroke="#3e4858"/><svg  fill="#ffffff" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" x="17" y="14" width="42" height="42"><title>Framer</title><path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z"/></svg><text x="71" y="34" font-size="17">Framer</text><text x="71" y="54" class="small">Interactive ideas</text></g></g>
+<g transform="translate(812 461)"><g class="float"><rect width="218" height="75" rx="14" fill="#181f29" stroke="#3e4858"/><svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 256 256" x="17" y="14" width="42" height="42"><rect width="256" height="256" fill="#242938" rx="60"/><path fill="#00D8FF" d="M128.001 146.951C138.305 146.951 146.657 138.598 146.657 128.295C146.657 117.992 138.305 109.639 128.001 109.639C117.698 109.639 109.345 117.992 109.345 128.295C109.345 138.598 117.698 146.951 128.001 146.951Z"/><path fill-rule="evenodd" stroke="#00D8FF" stroke-width="8.911" d="M128.002 90.3633C153.05 90.3633 176.319 93.9575 193.864 99.9976C215.003 107.275 228 118.306 228 128.295C228 138.704 214.226 150.423 191.525 157.944C174.363 163.63 151.779 166.598 128.002 166.598C103.624 166.598 80.5389 163.812 63.1834 157.881C41.2255 150.376 28 138.506 28 128.295C28 118.387 40.4096 107.441 61.2515 100.175C78.8617 94.0353 102.705 90.3633 127.998 90.3633H128.002Z" clip-rule="evenodd"/><path fill-rule="evenodd" stroke="#00D8FF" stroke-width="8.911" d="M94.9811 109.438C107.495 87.7402 122.232 69.3783 136.23 57.1971C153.094 42.5206 169.144 36.7728 177.796 41.7623C186.813 46.9623 190.084 64.7496 185.259 88.1712C181.614 105.879 172.9 126.925 161.021 147.523C148.842 168.641 134.897 187.247 121.09 199.315C103.619 214.587 86.7284 220.114 77.8833 215.013C69.3003 210.067 66.0181 193.846 70.1356 172.161C73.6145 153.838 82.3451 131.349 94.977 109.438L94.9811 109.438Z" clip-rule="evenodd"/><path fill-rule="evenodd" stroke="#00D8FF" stroke-width="8.911" d="M95.0123 147.578C82.4633 125.904 73.9194 103.962 70.3531 85.7517C66.0602 63.8109 69.0954 47.0355 77.7401 42.0315C86.7485 36.8163 103.792 42.866 121.674 58.7437C135.194 70.7479 149.077 88.8052 160.99 109.383C173.204 130.481 182.358 151.856 185.919 169.844C190.425 192.608 186.778 210.001 177.941 215.116C169.367 220.08 153.676 214.825 136.945 200.427C122.809 188.263 107.685 169.468 95.0123 147.578Z" clip-rule="evenodd"/></svg><text x="72" y="34" font-size="17">React</text><text x="72" y="54" class="small">Built for the browser</text></g></g>
+<path d="M44 568H1056" stroke="#303946"/>
+<text x="44" y="603" class="mono">01 / COMPOSE</text><text x="395" y="603" class="mono">02 / PROTOTYPE</text><text x="790" y="603" class="mono">03 / SHIP</text>
+<circle class="pulse" cx="1038" cy="599" r="4" fill="#d6dfed"/>
+</svg>
