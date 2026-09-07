@@ -10,7 +10,8 @@
     "deploy": "npx --yes vercel --prod",
     "metrics": "node scripts/generate-metrics.js",
     "motion": "node scripts/generate-motion.js",
-    "showcase": "node scripts/generate-showcase.js"
+    "showcase": "node scripts/generate-showcase.js",
+    "skills": "node scripts/generate-skills.js"
   },
   "engines": {
     "node": ">=20"

@@ -37,6 +37,22 @@ My focus sits at the intersection of **frontend engineering**, **UI/UX**, and **
 
 <sub>My strongest lane is frontend product engineering: translating a visual idea into a fast, accessible, maintainable experience.</sub>
 
+## Skills & capabilities
+
+<p align="center">
+  <img src="./assets/skills.svg?v=1" width="100%" alt="Frontend: React, Next.js, TypeScript, JavaScript, HTML, CSS. UI/UX: Figma, Framer. Backend and data: Node.js, Firebase, SQL. Version control: Git, GitHub.">
+</p>
+
+<details>
+<summary>Skills at a glance</summary>
+
+- **Frontend:** React, Next.js, TypeScript, JavaScript, HTML, CSS.
+- **UI/UX & design:** Figma, Framer.
+- **Backend & data:** Node.js, Firebase, SQL.
+- **Version control:** Git, GitHub.
+
+</details>
+
 ## Selected work
 
 <p align="center">
