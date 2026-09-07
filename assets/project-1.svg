@@ -1,6 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="340" height="385" viewBox="0 0 340 385" role="img" aria-label="Portfolio by Pozan: A personal space for design and development.">
-<defs><linearGradient id="bg" x2=".8" y2="1"><stop stop-color="#212b3a"/><stop offset="1" stop-color="#0e141e"/></linearGradient><style>text{fill:#e5eaf3;font-family:Verdana,sans-serif}.art{transform-origin:170px 130px;animation:float 7s ease-in-out infinite}.scan{animation:scan 4s ease-in-out infinite}.edge{stroke-dasharray:90 1350;animation:edge 10s linear infinite}@keyframes float{50%{transform:translateY(-7px) rotate(2deg)}}@keyframes scan{50%{transform:translateY(135px)}}@keyframes edge{to{stroke-dashoffset:-1440}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}</style></defs>
-<rect x="1" y="1" width="338" height="383" rx="18" fill="url(#bg)" stroke="#384457"/><rect class="edge" x="2" y="2" width="336" height="381" rx="18" fill="none" stroke="#a5b9fa" stroke-width="2"/>
-<text x="22" y="31" font-size="10" letter-spacing="2">01 / SELECTED REPOSITORY</text><g class="art"><rect x="44" y="66" width="248" height="149" rx="8" fill="#1d2633" stroke="#65718a"/><path d="M44 89H292" stroke="#65718a"/><text x="62" y="131" font-size="26" font-family="Georgia">POZAN</text><path d="M63 151H186M63 162H148" stroke="#8c98ac"/><rect x="215" y="114" width="52" height="75" rx="24" fill="none" stroke="#a5b9fa" stroke-width="9"/></g>
-<path d="M23 237H317" stroke="#394557"/><text x="23" y="263" font-size="10" letter-spacing="1" style="fill:#a5b9fa">PERSONAL / TYPESCRIPT</text><text x="23" y="298" font-size="24">Portfolio by Pozan</text><text x="23" y="327" font-size="11" style="fill:#aab6c8">Explore the project &amp; source code.</text><text x="23" y="361" font-size="12">OPEN REPOSITORY ↗</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="330" viewBox="0 0 960 330" role="img" aria-labelledby="title desc">
+<title id="title">Portfolio by Pozan</title><desc id="desc">A personal space for design and development. Animated illustration; open the repository using the surrounding link.</desc>
+<defs>
+  <linearGradient id="background" x2="1" y2=".6"><stop stop-color="#10151d"/><stop offset="1" stop-color="#090e14"/></linearGradient>
+  <radialGradient id="halo"><stop stop-color="#a5b9fa" stop-opacity=".15"/><stop offset="1" stop-color="#a5b9fa" stop-opacity="0"/></radialGradient>
+  <linearGradient id="panel" x2=".5" y2="1"><stop stop-color="#313844"/><stop offset="1" stop-color="#121922"/></linearGradient>
+  <linearGradient id="metal" x2="1" y2="1"><stop stop-color="#545984"/><stop offset=".3" stop-color="#e2e4ff"/><stop offset=".55" stop-color="#727aab"/><stop offset=".8" stop-color="#d9ddff"/><stop offset="1" stop-color="#474c70"/></linearGradient>
+  <linearGradient id="scan" x2="0" y2="1"><stop stop-color="#ffd2a0" stop-opacity="0"/><stop offset="1" stop-color="#ffd2a0" stop-opacity=".18"/></linearGradient>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#a5b9fa" stroke-opacity=".05"/></pattern>
+  <clipPath id="frame"><rect x="1" y="1" width="958" height="328" rx="18"/></clipPath>
+  <clipPath id="scan-clip"><rect x="553" y="90" width="324" height="163"/></clipPath>
+  <style>
+    text{fill:#edf0f5;font-family:Verdana,sans-serif}.micro{font:9px monospace;letter-spacing:1px;fill:#a5b9fa}.serif{font-family:Georgia,serif}
+    .float{animation:float 7s ease-in-out infinite}.rear{animation:rear 7s ease-in-out infinite}.paper{animation:paper 8s ease-in-out infinite}.rotate{animation:rotate 22s linear infinite}.cursor{animation:cursor 7s ease-in-out infinite}.selection{animation:select 7s ease-in-out infinite}.scanner{animation:scan 5s ease-in-out infinite}.write{stroke-dasharray:80;animation:write 8s ease-in-out infinite}.target{animation:select 5s ease-in-out infinite}.data{animation:data 3s linear infinite}.edge{stroke-dasharray:100 2500;animation:edge 14s linear infinite}
+    @keyframes float{50%{transform:translate(0,-8px)}}@keyframes rear{50%{transform:translate(-5px,6px)}}@keyframes paper{0%,100%{transform:translate(0,0)}50%{transform:translate(5px,-11px)}}@keyframes rotate{to{transform:rotate(360deg)}}@keyframes cursor{0%,100%{transform:translate(0,0)}35%,65%{transform:translate(-67px,-47px)}}@keyframes select{0%,100%{opacity:.25}40%,70%{opacity:1}}@keyframes scan{0%,100%{transform:translateY(0)}50%{transform:translateY(152px)}}@keyframes write{0%,10%{stroke-dashoffset:80}55%,100%{stroke-dashoffset:0}}@keyframes data{to{stroke-dashoffset:-54}}@keyframes edge{to{stroke-dashoffset:-2600}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important}.scanner{transform:translateY(95px)}}
+  </style>
+</defs>
+<rect x="1" y="1" width="958" height="328" rx="18" fill="url(#background)" stroke="#303943"/>
+<g clip-path="url(#frame)"><rect x="477" width="483" height="330" fill="url(#grid)"/><ellipse cx="727" cy="165" rx="269" ry="209" fill="url(#halo)"/>
+<text x="890" y="88" font-size="91" class="serif" fill="#a5b9fa" opacity=".06">1</text>
+<ellipse cx="727" cy="267" rx="180" ry="18" fill="#000" opacity=".45"/>
+  <g transform="translate(542 74) rotate(-8 150 85)"><g class="rear">
+    <rect width="292" height="164" rx="10" fill="#121624" stroke="#555b81"/>
+    <path d="M18 28H272M18 45H95V140H18ZM113 45H272V89H113ZM113 104H272V140H113Z" fill="none" stroke="#353c59"/>
+    <text x="18" y="18" class="micro">01 / STRUCTURE</text>
+  </g></g>
+  <g transform="translate(565 87) rotate(5 148 90)"><g class="float">
+    <rect x="0" y="7" width="299" height="174" rx="11" fill="#05070c"/>
+    <rect width="299" height="174" rx="11" fill="url(#panel)" stroke="#929ac0"/>
+    <path d="M0 25H299" stroke="#414760"/><g fill="#7f86a8"><circle cx="14" cy="13" r="2.5"/><circle cx="24" cy="13" r="2.5"/><circle cx="34" cy="13" r="2.5"/></g>
+    <text x="48" y="17" class="micro">POZAN / DESIGN CANVAS</text>
+    <text x="19" y="57" class="micro">DESIGN × CODE</text>
+    <text x="17" y="91" class="serif" font-size="27">Make it</text><text x="17" y="124" class="serif" font-size="27" font-style="italic">memorable.</text>
+    <path d="M20 144H119M20 152H87" stroke="#737c9a" stroke-width="2"/>
+    <g transform="translate(220 96)"><g class="rotate"><ellipse rx="40" ry="50" fill="none" stroke="url(#metal)" stroke-width="13" transform="rotate(35)"/><ellipse rx="40" ry="50" fill="none" stroke="#cad0ff" stroke-width="1" transform="rotate(-40)"/></g></g>
+    <g class="selection" stroke="#bcc3ff" fill="none"><rect x="13" y="65" width="169" height="68"/><path d="M10 62h6v6h-6zM179 62h6v6h-6zM10 130h6v6h-6zM179 130h6v6h-6z" fill="#cbd0ff"/></g>
+  </g></g>
+  <g transform="translate(769 229)"><g class="cursor"><path d="M0 0L6 25L12 16L22 12Z" fill="#e0e2ff" stroke="#0b0d18"/><rect x="17" y="20" width="69" height="24" rx="6" fill="#bbc2ff"/><text x="27" y="36" font-size="10" fill="#121626">POZAN</text></g></g>
+  <g transform="translate(522 237)"><g class="rear"><rect width="132" height="38" rx="8" fill="#181b2b" stroke="#565e85"/><circle cx="17" cy="19" r="5" fill="#c4c9ff"/><text x="31" y="23" class="micro">IDEA → INTERFACE</text></g></g></g>
+<path d="M484 39V291" stroke="#333d49" stroke-dasharray="2 7"/>
+<text x="35" y="39" class="micro" style="letter-spacing:2px">01 / SELECTED WORK</text>
+<text x="35" y="103" font-size="42" class="serif" style="letter-spacing:-1px">PORTFOLIO</text>
+<text x="36" y="141" font-size="22" class="serif" font-style="italic" style="fill:#a5b9fa">A little art. A lot of code.</text>
+<text x="37" y="183" font-size="12" style="fill:#a5afbd">A personal space for design and development.</text>
+<text x="37" y="215" class="micro">PERSONAL / TYPESCRIPT</text>
+<rect x="35" y="253" width="169" height="40" rx="20" fill="#a5b9fa" fill-opacity=".08" stroke="#a5b9fa" stroke-opacity=".45"/>
+<text x="53" y="278" font-size="11" style="letter-spacing:1px">EXPLORE SOURCE</text><path d="M178 278l8-8m-8 0h8v8" fill="none" stroke="#a5b9fa" stroke-width="1.5"/>
+<text x="445" y="278" text-anchor="end" class="micro">POZAN ↗</text>
+<rect class="edge" x="2" y="2" width="956" height="326" rx="17" fill="none" stroke="#a5b9fa" stroke-opacity=".5"/>
 </svg>

@@ -40,12 +40,16 @@ My focus sits at the intersection of **frontend engineering**, **UI/UX**, and **
 ## Selected work
 
 <p align="center">
-  <a href="https://github.com/Hungne16/portfoliobyPozan"><img src="./assets/project-1.svg" width="32%" alt="Portfolio by Pozan — open repository"></a>
-  <a href="https://github.com/Hungne16/CV-pilot"><img src="./assets/project-2.svg" width="32%" alt="CV Pilot — CV templates — open repository"></a>
-  <a href="https://github.com/Hungne16/vehicle-ocr-data-extractor"><img src="./assets/project-3.svg" width="32%" alt="Vehicle OCR — open repository"></a>
+  <a href="https://github.com/Hungne16/portfoliobyPozan"><img src="./assets/project-1.svg?v=cinematic-2" width="100%" alt="Portfolio by Pozan — floating design canvas and animated sculpture. Open repository."></a>
+</p>
+<p align="center">
+  <a href="https://github.com/Hungne16/CV-pilot"><img src="./assets/project-2.svg?v=cinematic-2" width="100%" alt="CV Pilot — layered CV layouts with animated typesetting. Open repository."></a>
+</p>
+<p align="center">
+  <a href="https://github.com/Hungne16/vehicle-ocr-data-extractor"><img src="./assets/project-3.svg?v=cinematic-2" width="100%" alt="Vehicle OCR — animated scanning and extraction illustration. Open repository."></a>
 </p>
 
-<sub>Illustrated project covers · click a card to explore its source.</sub>
+<sub>Three projects, three little worlds. Animated illustrations · click any cover to explore the source.</sub>
 
 ## Behind the commits
 

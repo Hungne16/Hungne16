@@ -1,6 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="340" height="385" viewBox="0 0 340 385" role="img" aria-label="Vehicle OCR: Explore the source of this OCR project.">
-<defs><linearGradient id="bg" x2=".8" y2="1"><stop stop-color="#212b3a"/><stop offset="1" stop-color="#0e141e"/></linearGradient><style>text{fill:#e5eaf3;font-family:Verdana,sans-serif}.art{transform-origin:170px 130px;animation:float 7s ease-in-out infinite}.scan{animation:scan 4s ease-in-out infinite}.edge{stroke-dasharray:90 1350;animation:edge 10s linear infinite}@keyframes float{50%{transform:translateY(-7px) rotate(2deg)}}@keyframes scan{50%{transform:translateY(135px)}}@keyframes edge{to{stroke-dashoffset:-1440}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}</style></defs>
-<rect x="1" y="1" width="338" height="383" rx="18" fill="url(#bg)" stroke="#384457"/><rect class="edge" x="2" y="2" width="336" height="381" rx="18" fill="none" stroke="#edc6a5" stroke-width="2"/>
-<text x="22" y="31" font-size="10" letter-spacing="2">03 / SELECTED REPOSITORY</text><g class="art"><path d="M62 101L88 68H231L263 102V168H62Z" fill="#2e3035" stroke="#b9a28e"/><path d="M85 101L104 80H218L239 101Z" fill="#111923"/><circle cx="96" cy="161" r="19" fill="#111923" stroke="#93a0b1"/><circle cx="230" cy="161" r="19" fill="#111923" stroke="#93a0b1"/><rect x="121" y="116" width="84" height="25" rx="4" fill="#edc6a5"/><text x="131" y="134" style="fill:#171c25;font-size:14px">OCR / 01</text><path class="scan" d="M42 60H282" stroke="#edc6a5" stroke-width="2"/></g>
-<path d="M23 237H317" stroke="#394557"/><text x="23" y="263" font-size="10" letter-spacing="1" style="fill:#edc6a5">EXPERIMENT / JAVASCRIPT</text><text x="23" y="298" font-size="24">Vehicle OCR</text><text x="23" y="327" font-size="11" style="fill:#aab6c8">Explore the project &amp; source code.</text><text x="23" y="361" font-size="12">OPEN REPOSITORY ↗</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="330" viewBox="0 0 960 330" role="img" aria-labelledby="title desc">
+<title id="title">Vehicle OCR</title><desc id="desc">A vehicle OCR data extraction experiment. Animated illustration; open the repository using the surrounding link.</desc>
+<defs>
+  <linearGradient id="background" x2="1" y2=".6"><stop stop-color="#10151d"/><stop offset="1" stop-color="#090e14"/></linearGradient>
+  <radialGradient id="halo"><stop stop-color="#edc6a5" stop-opacity=".15"/><stop offset="1" stop-color="#edc6a5" stop-opacity="0"/></radialGradient>
+  <linearGradient id="panel" x2=".5" y2="1"><stop stop-color="#313844"/><stop offset="1" stop-color="#121922"/></linearGradient>
+  <linearGradient id="metal" x2="1" y2="1"><stop stop-color="#545984"/><stop offset=".3" stop-color="#e2e4ff"/><stop offset=".55" stop-color="#727aab"/><stop offset=".8" stop-color="#d9ddff"/><stop offset="1" stop-color="#474c70"/></linearGradient>
+  <linearGradient id="scan" x2="0" y2="1"><stop stop-color="#ffd2a0" stop-opacity="0"/><stop offset="1" stop-color="#ffd2a0" stop-opacity=".18"/></linearGradient>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#edc6a5" stroke-opacity=".05"/></pattern>
+  <clipPath id="frame"><rect x="1" y="1" width="958" height="328" rx="18"/></clipPath>
+  <clipPath id="scan-clip"><rect x="553" y="90" width="324" height="163"/></clipPath>
+  <style>
+    text{fill:#edf0f5;font-family:Verdana,sans-serif}.micro{font:9px monospace;letter-spacing:1px;fill:#edc6a5}.serif{font-family:Georgia,serif}
+    .float{animation:float 7s ease-in-out infinite}.rear{animation:rear 7s ease-in-out infinite}.paper{animation:paper 8s ease-in-out infinite}.rotate{animation:rotate 22s linear infinite}.cursor{animation:cursor 7s ease-in-out infinite}.selection{animation:select 7s ease-in-out infinite}.scanner{animation:scan 5s ease-in-out infinite}.write{stroke-dasharray:80;animation:write 8s ease-in-out infinite}.target{animation:select 5s ease-in-out infinite}.data{animation:data 3s linear infinite}.edge{stroke-dasharray:100 2500;animation:edge 14s linear infinite}
+    @keyframes float{50%{transform:translate(0,-8px)}}@keyframes rear{50%{transform:translate(-5px,6px)}}@keyframes paper{0%,100%{transform:translate(0,0)}50%{transform:translate(5px,-11px)}}@keyframes rotate{to{transform:rotate(360deg)}}@keyframes cursor{0%,100%{transform:translate(0,0)}35%,65%{transform:translate(-67px,-47px)}}@keyframes select{0%,100%{opacity:.25}40%,70%{opacity:1}}@keyframes scan{0%,100%{transform:translateY(0)}50%{transform:translateY(152px)}}@keyframes write{0%,10%{stroke-dashoffset:80}55%,100%{stroke-dashoffset:0}}@keyframes data{to{stroke-dashoffset:-54}}@keyframes edge{to{stroke-dashoffset:-2600}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important}.scanner{transform:translateY(95px)}}
+  </style>
+</defs>
+<rect x="1" y="1" width="958" height="328" rx="18" fill="url(#background)" stroke="#303943"/>
+<g clip-path="url(#frame)"><rect x="477" width="483" height="330" fill="url(#grid)"/><ellipse cx="727" cy="165" rx="269" ry="209" fill="url(#halo)"/>
+<text x="890" y="88" font-size="91" class="serif" fill="#edc6a5" opacity=".06">3</text>
+<path d="M527 265H906M551 248H881M577 233H855M600 220H832M620 209H812M648 194L570 280M690 194L669 280M735 194L768 280M777 194L868 280" fill="none" stroke="#8a6242" opacity=".22"/>
+  <g transform="translate(572 67)"><g class="float">
+    <path d="M16 108L49 52Q53 46 65 46H225Q237 46 242 55L269 108L278 121V174H7V121Z" fill="url(#panel)" stroke="#be9673"/>
+    <path d="M48 103L71 57H216L239 103Z" fill="#070e15" stroke="#63727a"/><path d="M147 59V100" stroke="#35404a"/>
+    <path d="M29 116H81L87 132H24ZM208 116H253L259 132H202Z" fill="#ecd8ae"/>
+    <path d="M86 156H202M92 162H196" stroke="#776e66" stroke-width="3"/>
+    <rect x="17" y="170" width="39" height="25" rx="8" fill="#05080c" stroke="#4e5158"/><rect x="231" y="170" width="39" height="25" rx="8" fill="#05080c" stroke="#4e5158"/>
+    <rect x="102" y="130" width="83" height="24" rx="3" fill="#f3dcc0"/><text x="143" y="147" text-anchor="middle" style="fill:#252523;font:13px monospace;letter-spacing:2px">POZAN</text>
+    <path class="target" d="M96 137V125H110M178 125H191V137M96 148V159H110M178 159H191V148" fill="none" stroke="#ffc890" stroke-width="2"/>
+  </g></g>
+  <g clip-path="url(#scan-clip)"><g class="scanner"><rect x="553" y="64" width="324" height="30" fill="url(#scan)"/><path d="M553 94H877" stroke="#ffd2a0" stroke-width="1.5"/></g></g>
+  <g transform="translate(795 58)"><g class="rear"><rect width="112" height="59" rx="8" fill="#231b17" stroke="#98704e"/><text x="12" y="21" class="micro">OCR / PREVIEW</text><text x="12" y="43" font-size="16" style="font-family:monospace;letter-spacing:2px">POZAN</text></g></g>
+  <path class="data" d="M765 204H892V126" fill="none" stroke="#d9a878" stroke-dasharray="3 6"/>
+  <text x="533" y="289" class="micro">FRAME 001</text><text x="908" y="289" text-anchor="end" class="micro">SCAN → EXTRACT</text></g>
+<path d="M484 39V291" stroke="#333d49" stroke-dasharray="2 7"/>
+<text x="35" y="39" class="micro" style="letter-spacing:2px">03 / SELECTED WORK</text>
+<text x="35" y="103" font-size="42" class="serif" style="letter-spacing:-1px">VEHICLE OCR</text>
+<text x="36" y="141" font-size="22" class="serif" font-style="italic" style="fill:#edc6a5">Finding meaning in pixels.</text>
+<text x="37" y="183" font-size="12" style="fill:#a5afbd">A vehicle OCR data extraction experiment.</text>
+<text x="37" y="215" class="micro">EXPERIMENT / JAVASCRIPT</text>
+<rect x="35" y="253" width="169" height="40" rx="20" fill="#edc6a5" fill-opacity=".08" stroke="#edc6a5" stroke-opacity=".45"/>
+<text x="53" y="278" font-size="11" style="letter-spacing:1px">EXPLORE SOURCE</text><path d="M178 278l8-8m-8 0h8v8" fill="none" stroke="#edc6a5" stroke-width="1.5"/>
+<text x="445" y="278" text-anchor="end" class="micro">POZAN ↗</text>
+<rect class="edge" x="2" y="2" width="956" height="326" rx="17" fill="none" stroke="#edc6a5" stroke-opacity=".5"/>
 </svg>
