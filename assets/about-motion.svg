@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="550" viewBox="0 0 1100 550" role="img" aria-labelledby="title desc">
+<title id="title">About POZAN — a designer's eye, an engineer's mind</title>
+<desc id="desc">Software Engineering student focused on Frontend, UI/UX and product thinking. Designing with Figma and Framer, building thoughtful web experiences. Cinematic decorative animation with a reduced-motion alternative.</desc>
+<defs>
+  <linearGradient id="surface" x2="1" y2="1"><stop stop-color="#151a23"/><stop offset=".6" stop-color="#0d1117"/><stop offset="1" stop-color="#1b151d"/></linearGradient>
+  <linearGradient id="metal" x2="1" y2="1"><stop stop-color="#414a5b"/><stop offset=".3" stop-color="#f2f0e9"/><stop offset=".5" stop-color="#586173"/><stop offset=".73" stop-color="#c3cede"/><stop offset="1" stop-color="#222b39"/></linearGradient>
+  <linearGradient id="light"><stop stop-color="#d1dcf4" stop-opacity="0"/><stop offset=".5" stop-color="#d1dcf4" stop-opacity=".08"/><stop offset="1" stop-color="#d1dcf4" stop-opacity="0"/></linearGradient>
+  <radialGradient id="halo"><stop stop-color="#a2b0c9" stop-opacity=".18"/><stop offset="1" stop-color="#a2b0c9" stop-opacity="0"/></radialGradient>
+  <pattern id="grain" width="13" height="13" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#ccd5e4" opacity=".13"/></pattern>
+  <clipPath id="frame"><rect width="1100" height="550" rx="18"/></clipPath>
+  <clipPath id="portrait"><rect x="729" y="102" width="318" height="326" rx="140"/></clipPath>
+  <style>
+    text{fill:#e5eaf2;font-family:Verdana,sans-serif}.meta{font-family:monospace;font-size:11px;letter-spacing:2px;fill:#9aa9bf}.display{font-family:Georgia,serif;font-size:53px;letter-spacing:-1.8px}.body{font-size:16px;fill:#b2bed0}
+    .reveal{animation:reveal 14s ease-in-out infinite}.second{animation-delay:.25s}.third{animation-delay:.5s}.fourth{animation-delay:.75s}
+    .light{animation:light 14s ease-in-out infinite}.float{animation:float 9s ease-in-out infinite}.dust{animation:dust 12s ease-in-out infinite}.ring{transform-origin:886px 262px;animation:ring 25s linear infinite}
+    .trace{stroke-dasharray:160 1900;animation:trace 12s linear infinite}.progress{transform-box:fill-box;transform-origin:left;animation:progress 14s linear infinite}.pulse{animation:pulse 4s ease-in-out infinite}
+    @keyframes reveal{0%{opacity:.2;transform:translateY(7px)}9%,89%{opacity:1;transform:translateY(0)}100%{opacity:.2;transform:translateY(7px)}}
+    @keyframes light{0%,12%{transform:translateX(-500px)}75%,100%{transform:translateX(1500px)}}
+    @keyframes float{50%{transform:translateY(-9px) rotate(1deg)}}@keyframes dust{50%{transform:translate(10px,-16px);opacity:.2}}
+    @keyframes ring{to{transform:rotate(360deg)}}@keyframes trace{to{stroke-dashoffset:-2060}}@keyframes progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}@keyframes pulse{50%{opacity:.25}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important}.light{display:none}.reveal{opacity:1;transform:none}}
+  </style>
+</defs>
+<g clip-path="url(#frame)">
+  <rect width="1100" height="550" fill="url(#surface)"/><rect width="1100" height="550" fill="url(#grain)"/>
+  <ellipse cx="877" cy="274" rx="252" ry="261" fill="url(#halo)"/>
+  <rect width="1100" height="20" fill="#070a0f"/><rect y="527" width="1100" height="23" fill="#070a0f"/>
+  <text x="43" y="57" class="meta">01 / THE PERSON BEHIND THE PIXELS</text>
+  <circle cx="1036" cy="52" r="3" fill="#ef8f9b" class="pulse"/>
+  <g class="reveal">
+    <text x="43" y="134" class="meta" style="fill:#b9c8e2">HELLO, I'M POZAN.</text>
+    <text x="39" y="198" class="display">A designer's eye.</text>
+  </g>
+  <g class="reveal second"><text x="39" y="255" class="display" font-style="italic">An engineer's mind.</text></g>
+  <g class="reveal third">
+    <text x="43" y="311" class="body">Software Engineering student exploring the space</text>
+    <text x="43" y="338" class="body">between thoughtful interfaces and reliable code.</text>
+    <text x="43" y="380" class="body">I design with Figma and Framer, then bring ideas</text>
+    <text x="43" y="407" class="body">to life through frontend engineering.</text>
+  </g>
+  <g class="reveal fourth">
+    <rect x="43" y="440" width="152" height="31" rx="15" fill="#1d2634" stroke="#41516a"/><text x="67" y="460" class="meta" style="letter-spacing:1px">FRONTEND</text>
+    <rect x="207" y="440" width="129" height="31" rx="15" fill="#1d2634" stroke="#41516a"/><text x="235" y="460" class="meta" style="letter-spacing:1px">UI / UX</text>
+    <rect x="348" y="440" width="212" height="31" rx="15" fill="#1d2634" stroke="#41516a"/><text x="369" y="460" class="meta" style="letter-spacing:1px">PRODUCT THINKING</text>
+  </g>
+  <path d="M685 112V437" stroke="#394658" stroke-dasharray="2 7"/>
+  <rect x="729" y="102" width="318" height="326" rx="140" fill="#10151e" stroke="#58667c"/>
+  <g clip-path="url(#portrait)">
+    <path d="M738 354L1030 151M737 398L1041 195M776 431L1060 232" stroke="#293448"/>
+    <g class="float" style="transform-origin:886px 265px">
+      <path d="M793 360L837 219L886 149L939 220L980 360L886 392Z" fill="#1a2432" stroke="#a3b3cd"/>
+      <path d="M837 219L886 149L939 220L887 300Z" fill="url(#metal)"/>
+      <path d="M793 360L837 219L887 300L886 392Z" fill="#38465c" stroke="#8293ae"/>
+      <path d="M939 220L980 360L886 392L887 300Z" fill="url(#metal)" stroke="#8293ae"/>
+      <path d="M837 219L939 220M793 360L887 300L980 360" stroke="#e2e8f0" fill="none" opacity=".55"/>
+    </g>
+    <g class="ring" fill="none" stroke="#cfdbf0" opacity=".6"><ellipse cx="886" cy="262" rx="123" ry="49" transform="rotate(-32 886 262)"/><circle cx="1005" cy="235" r="3" fill="#f0f4ff"/></g>
+    <g class="dust" fill="#ccd9f1"><circle cx="759" cy="172" r="1.4"/><circle cx="982" cy="133" r="1.5"/><circle cx="818" cy="381" r="1"/><circle cx="1008" cy="357" r="1.2"/><circle cx="945" cy="408" r="1.2"/></g>
+  </g>
+  <text x="887" y="458" text-anchor="middle" class="meta">INSTINCT × PRECISION</text>
+  <text x="887" y="481" text-anchor="middle" class="meta" style="font-size:9px;fill:#687a94">A STUDY IN BALANCE</text>
+  <rect class="light" x="-220" y="20" width="260" height="507" fill="url(#light)" transform="skewX(-12)"/>
+  <path d="M43 502H1056" stroke="#263245"/><path class="progress" d="M43 502H1056" stroke="#a7b9d6" stroke-width="1"/>
+  <path class="trace" d="M19 82V29H1080V513H19Z" stroke="#7c8fae" fill="none" opacity=".55"/>
+</g>
+</svg>

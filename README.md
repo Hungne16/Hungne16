@@ -16,9 +16,18 @@
 
 ## About me
 
+<div align="center">
+  <img src="./assets/about-motion.svg" width="100%" alt="About POZAN — Software Engineering student, frontend developer and UI/UX enthusiast working with Figma and Framer">
+</div>
+
+<details>
+<summary>Read my introduction</summary>
+
 I'm **POZAN**, a Software Engineering student building digital products that are useful, tactile, and quietly memorable. I care about the whole journey: from a clear visual system in Figma to a resilient, responsive interface in the browser.
 
 My focus sits at the intersection of **frontend engineering**, **UI/UX**, and **product thinking**. I work with Figma and Framer to find the right experience before turning it into clean, maintainable code.
+
+</details>
 
 ## Tools of my craft
 
