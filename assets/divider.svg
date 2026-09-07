@@ -1,4 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="54" viewBox="0 0 1200 54" role="presentation">
   <defs><linearGradient id="signal"><stop stop-color="#52f7d7"/><stop offset=".5" stop-color="#ffe66d"/><stop offset="1" stop-color="#ff6b2c"/></linearGradient><filter id="g"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <path d="M60 27H1140" stroke="#263d45"/><path d="M390 27H810" stroke="url(#signal)" stroke-width="2" filter="url(#g)" stroke-dasharray="48 18"><animate attributeName="stroke-dashoffset" values="0;-132" dur="4s" repeatCount="indefinite"/></path><circle cx="600" cy="27" r="7" fill="#52f7d7" filter="url(#g)"><animate attributeName="r" values="5;9;5" dur="2.4s" repeatCount="indefinite"/></circle>
+  <path d="M60 27H1140" stroke="#30363d"/><path d="M480 27H720" stroke="#a5adb8" stroke-width="1" stroke-dasharray="2 12"><animate attributeName="stroke-dashoffset" values="0;-56" dur="6s" repeatCount="indefinite"/></path><path d="M600 18L603 24L609 27L603 30L600 36L597 30L591 27L597 24Z" fill="#e6edf3"/>
 </svg>

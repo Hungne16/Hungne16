@@ -139,7 +139,7 @@ function languageBars(languages) {
 function recentActivity(events) {
   if (!events.length) return '<text class="muted" x="60" y="335" font-size="14">Recent public activity will appear here.</text>';
   return events.slice(0, 3).map((event, index) => {
-    const y = 328 + index * 48;
+    const y = 317 + index * 44;
     const repo = event.repo?.name || 'GitHub';
     const date = event.created_at ? new Date(event.created_at).toLocaleDateString('en', { month: 'short', day: 'numeric' }) : '';
     return `<path d="M61 ${y - 5}l5-5 5 5-5 5z" fill="#52f7d7"/><text class="label" x="82" y="${y}" font-size="14">${escapeXml(formatEvent(event.type))}</text><text class="muted" x="82" y="${y + 19}" font-size="12">${escapeXml(repo)}</text><text class="muted" x="572" y="${y}" font-size="12" text-anchor="end">${escapeXml(date)}</text>`;
@@ -172,6 +172,7 @@ function buildSvg(data) {
   <rect class="panel" x="48" y="251" width="548" height="187" rx="15"/><text class="eyebrow" x="66" y="282">RECENT ACTIVITY</text>${recentActivity(events)}
   <rect class="panel" x="620" y="251" width="532" height="187" rx="15"/><text class="eyebrow" x="654" y="282">TOP LANGUAGES BY CODE SIZE</text>${languageBars(languages)}
   <text class="eyebrow" x="48" y="466">CONTRIBUTIONS · LAST 12 MONTHS</text><text class="muted" x="1152" y="466" font-size="12" text-anchor="end">${compactNumber(totalContributions)} TOTAL</text>${contributionGrid(weeks)}
+  <style>.bg{fill:#0d1117}.card,.panel{fill:#161b22;stroke:#30363d}.title,.value,.label{fill:#e6edf3}.eyebrow,.muted{fill:#a5adb8}.level-0{fill:#21262d}.level-1{fill:#454c56}.level-2{fill:#6d7682}.level-3{fill:#a5adb8}.level-4{fill:#e6edf3}</style>
 </svg>\n`;
 }
 
