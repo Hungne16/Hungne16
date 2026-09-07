@@ -1,6 +1,7 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { renderMetrics } from './render-metrics.js';
 
 const API = 'https://api.github.com';
 const GRAPHQL_API = 'https://api.github.com/graphql';
@@ -47,7 +48,7 @@ function formatEvent(type) {
 
 async function requestJson(url, options = {}, fallback = null, label = url) {
   try {
-    const response = await fetch(url, { ...options, headers: { ...headers, ...options.headers } });
+    const response = await fetch(url, { ...options, signal: AbortSignal.timeout(20000), headers: { ...headers, ...options.headers } });
     if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
     return await response.json();
   } catch (error) {
@@ -113,68 +114,6 @@ async function getContributionData(login) {
   return result?.data?.user?.contributionsCollection || null;
 }
 
-function contributionGrid(weeks) {
-  if (!weeks.length) {
-    return '<text class="muted" x="60" y="500" font-size="14">Contribution calendar becomes available when GITHUB_TOKEN is present.</text>';
-  }
-  const days = weeks.flatMap((week) => week.contributionDays);
-  const max = Math.max(...days.map((day) => day.contributionCount), 1);
-  return weeks.slice(-54).map((week, column) => week.contributionDays.map((day) => {
-    const row = new Date(`${day.date}T00:00:00Z`).getUTCDay();
-    const level = day.contributionCount === 0 ? 0 : Math.max(1, Math.ceil((day.contributionCount / max) * 4));
-    return `<rect class="level-${level}" x="${60 + column * 19}" y="${478 + row * 19}" width="13" height="13" rx="3"><title>${escapeXml(day.date)}: ${day.contributionCount} contributions</title></rect>`;
-  }).join('')).join('');
-}
-
-function languageBars(languages) {
-  if (!languages.length) return '<text class="muted" x="654" y="335" font-size="14">Language data will appear after the first update.</text>';
-  const colors = ['#52f7d7', '#ffe66d', '#ff8249', '#77a4ff', '#9f8cff'];
-  return languages.map((language, index) => {
-    const y = 315 + index * 27;
-    const width = Math.max(4, Math.round(language.percent * 4.5));
-    return `<g><text class="label" x="654" y="${y}" font-size="13">${escapeXml(language.name)}</text><text class="muted" x="1110" y="${y}" font-size="12" text-anchor="end">${language.percent.toFixed(1)}%</text><rect class="track" x="654" y="${y + 7}" width="456" height="5" rx="2.5"/><rect x="654" y="${y + 7}" width="${width}" height="5" rx="2.5" fill="${colors[index]}"><animate attributeName="width" from="0" to="${width}" dur=".8s" fill="freeze"/></rect></g>`;
-  }).join('');
-}
-
-function recentActivity(events) {
-  if (!events.length) return '<text class="muted" x="60" y="335" font-size="14">Recent public activity will appear here.</text>';
-  return events.slice(0, 3).map((event, index) => {
-    const y = 317 + index * 44;
-    const repo = event.repo?.name || 'GitHub';
-    const date = event.created_at ? new Date(event.created_at).toLocaleDateString('en', { month: 'short', day: 'numeric' }) : '';
-    return `<path d="M61 ${y - 5}l5-5 5 5-5 5z" fill="#52f7d7"/><text class="label" x="82" y="${y}" font-size="14">${escapeXml(formatEvent(event.type))}</text><text class="muted" x="82" y="${y + 19}" font-size="12">${escapeXml(repo)}</text><text class="muted" x="572" y="${y}" font-size="12" text-anchor="end">${escapeXml(date)}</text>`;
-  }).join('');
-}
-
-function buildSvg(data) {
-  const { login, profile, repositories, languages, contributions, events, totalCommits } = data;
-  const stars = repositories.reduce((sum, repo) => sum + (repo.stargazers_count || 0), 0);
-  const totalContributions = contributions?.contributionCalendar?.totalContributions ?? 0;
-  const commitCount = totalCommits ?? contributions?.totalCommitContributions ?? 0;
-  const weeks = contributions?.contributionCalendar?.weeks || [];
-  const cards = [
-    ['COMMITS', compactNumber(commitCount), totalCommits === null ? 'last 12 months' : 'public history'],
-    ['REPOSITORIES', compactNumber(profile.public_repos || repositories.length), 'public work'],
-    ['STARS EARNED', compactNumber(stars), 'across repositories'],
-    ['FOLLOWERS', compactNumber(profile.followers), 'GitHub community'],
-  ];
-  const cardMarkup = cards.map(([label, value, note], index) => {
-    const x = 48 + index * 282;
-    return `<g><rect class="card" x="${x}" y="144" width="258" height="90" rx="3"/><text class="eyebrow" x="${x + 20}" y="171">${label}</text><text class="value" x="${x + 20}" y="207">${value}</text><text class="muted" x="${x + 92}" y="205" font-size="11">${note}</text></g>`;
-  }).join('');
-  const updated = new Date().toISOString().slice(0, 10);
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
-  <title id="title">GitHub metrics for ${escapeXml(login)}</title><desc id="desc">Repository, star, follower, language, recent activity, and contribution statistics generated from the GitHub API.</desc>
-  <defs><linearGradient id="accent" x1="0" x2="1"><stop offset="0" stop-color="#52f7d7"/><stop offset=".52" stop-color="#ffe66d"/><stop offset="1" stop-color="#ff8249"/><animate attributeName="x1" values="-.2;.1;-.2" dur="8s" repeatCount="indefinite"/><animate attributeName="x2" values=".8;1.1;.8" dur="8s" repeatCount="indefinite"/></linearGradient><linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#10232a"/><stop offset="1" stop-color="#091117"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="3" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter><style>text{font-family:"Courier New",Courier,monospace}.bg{fill:#05080e}.card{fill:url(#card);stroke:#31515b}.panel{fill:#081219;stroke:#29434c}.title{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.5px;fill:#f1f8f5}.value,.label{fill:#f1f8f5}.muted{fill:#91a5aa}.eyebrow{fill:#52f7d7;font-size:11px;letter-spacing:1.7px}.value{font-size:30px;font-weight:700}.track{fill:#1b3037}.level-0{fill:#122129}.level-1{fill:#174641}.level-2{fill:#1e7770}.level-3{fill:#31b7a5}.level-4{fill:#52f7d7}</style></defs>
-  <rect class="bg" width="1200" height="650" rx="20"/><rect x="0" y="0" width="1200" height="3" fill="url(#accent)" filter="url(#glow)"/><path d="M25 30V620" stroke="#52f7d7" stroke-width="2" opacity=".65"/>
-  <text class="eyebrow" x="48" y="58">02 / LIVE TELEMETRY</text><text class="title" x="48" y="91" font-size="31" font-weight="700">Proof of practice.</text><text class="muted" x="48" y="113" font-size="13">@${escapeXml(login)} / public signal</text><text class="muted" x="1152" y="64" font-size="12" text-anchor="end">SYNCED ${updated}</text>
-  ${cardMarkup}
-  <rect class="panel" x="48" y="251" width="548" height="187" rx="15"/><text class="eyebrow" x="66" y="282">RECENT ACTIVITY</text>${recentActivity(events)}
-  <rect class="panel" x="620" y="251" width="532" height="187" rx="15"/><text class="eyebrow" x="654" y="282">TOP LANGUAGES BY CODE SIZE</text>${languageBars(languages)}
-  <text class="eyebrow" x="48" y="466">CONTRIBUTIONS · LAST 12 MONTHS</text><text class="muted" x="1152" y="466" font-size="12" text-anchor="end">${compactNumber(totalContributions)} TOTAL</text>${contributionGrid(weeks)}
-  <style>.bg{fill:#0d1117}.card,.panel{fill:#161b22;stroke:#30363d}.title,.value,.label{fill:#e6edf3}.eyebrow,.muted{fill:#a5adb8}.level-0{fill:#21262d}.level-1{fill:#454c56}.level-2{fill:#6d7682}.level-3{fill:#a5adb8}.level-4{fill:#e6edf3}</style>
-</svg>\n`;
-}
 
 async function main() {
   if (!username) {
@@ -187,9 +126,9 @@ async function main() {
     username ? getLanguages(repositories) : [],
     username ? getContributionData(login) : null,
     username ? requestJson(`${API}/users/${encodeURIComponent(login)}/events/public?per_page=10`, {}, [], 'recent activity') : [],
-    username && token ? requestJson(`${API}/search/commits?q=author:${encodeURIComponent(login)}&per_page=1`, {}, null, 'commit search') : null,
+    username ? requestJson(`${API}/search/commits?q=author:${encodeURIComponent(login)}&per_page=1`, {}, null, 'commit search') : null,
   ]);
-  const svg = buildSvg({ login, profile, repositories, languages, contributions, events, totalCommits: commitSearch?.total_count ?? null });
+  const svg = renderMetrics({ login, profile, repositories, languages, contributions, events, totalCommits: commitSearch?.total_count ?? null });
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, svg, 'utf8');
   console.log(`Generated ${outputPath} for @${login}`);

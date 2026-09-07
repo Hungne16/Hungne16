@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/artist-banner.png" width="100%" alt="Two sculptural hands meeting in a constellation of pixels — POZAN">
+  <img src="./assets/artist-motion.svg" width="100%" alt="Two sculptural hands meeting in a constellation of pixels — POZAN">
 </div>
 
 <br>
@@ -30,13 +30,13 @@ My focus sits at the intersection of **frontend engineering**, **UI/UX**, and **
 
 ## Selected work
 
-<!-- Replace the three entries below with real repositories when they are ready. -->
+<p align="center">
+  <a href="https://github.com/Hungne16/portfoliobyPozan"><img src="./assets/project-1.svg" width="32%" alt="Portfolio by Pozan — open repository"></a>
+  <a href="https://github.com/Hungne16/CV-pilot"><img src="./assets/project-2.svg" width="32%" alt="CV Pilot — CV templates — open repository"></a>
+  <a href="https://github.com/Hungne16/vehicle-ocr-data-extractor"><img src="./assets/project-3.svg" width="32%" alt="Vehicle OCR — open repository"></a>
+</p>
 
-| | Project | Focus | Stack |
-| :-- | :-- | :-- | :-- |
-| `01` | **[Project One](https://github.com/Hungne16/PROJECT_ONE)** | A product built around one clear user problem and a frictionless flow. | `Next.js` `TypeScript` |
-| `02` | **[Project Two](https://github.com/Hungne16/PROJECT_TWO)** | A responsive interface where visual detail supports the task at hand. | `React` `Firebase` |
-| `03` | **[Project Three](https://github.com/Hungne16/PROJECT_THREE)** | An experiment in systems, interaction, or thoughtful web craft. | `Node.js` `SQL` |
+<sub>Illustrated project covers · click a card to explore its source.</sub>
 
 ## Behind the commits
 
